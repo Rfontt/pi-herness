@@ -1,0 +1,11 @@
+# secrets — never commit
+auth.json
+
+# machine-specific
+trust.json
+sessions/
+models-store.json
+bin/
+
+# macOS
+.DS_Store
