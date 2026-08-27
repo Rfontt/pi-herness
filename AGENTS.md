@@ -8,7 +8,7 @@ Always write in English: code, comments, commit messages, memory (.ai/), and res
 
 ## Operating loop (always follow)
 1. UNDERSTAND — read the engineering memory (.ai/), tests and relevant code before proposing anything.
-2. PLAN — for non-trivial work, write a short plan and wait for approval BEFORE touching code.
+2. PLAN — for non-trivial work, write a short plan and wait for approval BEFORE touching code. For significant work (new feature, subsystem, architecture/data-model/contracts change), use the spec-driven-development skill (spec → plan → tasks) instead.
 3. IMPLEMENT — small, verifiable steps, one thing at a time.
 4. VERIFY — actually run the tests/checks. Never claim something passed without running it.
 5. REVIEW — self-review against the code-review criteria.
@@ -39,5 +39,5 @@ Always write in English: code, comments, commit messages, memory (.ai/), and res
 - Do not bake a specific model's behavior into the config; the harness must work with any provider.
 
 ## Available resources
-Skills (load when applicable): engineering-memory, planning, code-review, debugging, incident-response, handoff.
-Quick prompts (user can type): /understand /plan /implement /verify /review /retro /handoff.
+Skills (load when applicable): engineering-memory, planning, spec-driven-development, code-review, debugging, incident-response, handoff.
+Quick prompts (user can type): /understand /plan /spec /implement /verify /review /retro /handoff.
