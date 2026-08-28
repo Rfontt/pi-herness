@@ -1,0 +1,6 @@
+- Rita de Cássia Fontenele — native Portuguese speaker (pt-BR); prefers English in code and engineering responses while learning it.
+- Works via voice notes and chat; transcription can be inaccurate — confirm understanding when a phrase looks odd.
+- Prefers concise, well-structured answers: tables, practical examples, ASCII diagrams.
+- Likes one file per concept, not monolithic notes.
+- Obsidian vault at ~/Documents/second-brain/rfontt-macos-pc/ (PARA: 00_Inbox, 01_Daily, 03_Permanent, 04_Studies, 05_Active, 06_Archived).
+- Studies productivity methods (4DX, Deep Work); writes about AI-assisted learning.
