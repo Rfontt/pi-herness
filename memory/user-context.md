@@ -4,3 +4,4 @@
 - Likes one file per concept, not monolithic notes.
 - Obsidian vault at ~/Documents/second-brain/rfontt-macos-pc/ (PARA: 00_Inbox, 01_Daily, 03_Permanent, 04_Studies, 05_Active, 06_Archived).
 - Studies productivity methods (4DX, Deep Work); writes about AI-assisted learning.
+- Runs Docker via colima locally. Before running any docker command (docker, docker-compose), check if colima is running and start it first if not: `colima status` then `colima start`.

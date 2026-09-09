@@ -16,12 +16,12 @@ Always write in English: code, comments, commit messages, memory (.ai/), and res
 - No comments in code. Rely on clear naming. Keep only functional annotations the toolchain requires (e.g. `//go:embed`, `-- +goose Up`).
 
 ## Operating loop (always follow)
-1. UNDERSTAND — read the engineering memory (.ai/), tests and relevant code before proposing anything.
+1. UNDERSTAND — read the engineering memory (.ai/) — including `.ai/context/handoff.md` when an `open` handoff is pending — plus tests and relevant code before proposing anything. An open handoff is a direct instruction to continue.
 2. PLAN — for non-trivial work, write a short plan and wait for approval BEFORE touching code. For significant work (new feature, subsystem, architecture/data-model/contracts change), use the spec-driven-development skill (spec → plan → tasks) instead.
 3. IMPLEMENT — small, verifiable steps, one thing at a time.
 4. VERIFY — actually run the tests/checks. Never claim something passed without running it.
 5. REVIEW — self-review against the code-review criteria.
-6. REFLECT — at the end, update .ai/ (decisions, lessons) and write the handoff.
+6. REFLECT — at the end, WRITE durable memory (decision → .ai/decisions/, lesson → .ai/lessons/, incident → .ai/incidents/, context → .ai/context/), flag contradictions with a `contradicts:` relation, then write the typed handoff (.ai/context/handoff.md). Never skip — this is how the harness learns.
 
 ## Engineering memory (.ai/)
 - Memory lives in .ai/ at the project root (markdown, versioned in git).
@@ -41,6 +41,7 @@ Always write in English: code, comments, commit messages, memory (.ai/), and res
 - Never silently change an architectural decision.
 - Never introduce a dependency without explaining why.
 - For destructive or high-impact actions, ASK for confirmation first.
+- Git pushes (feature branches via `glab mr create --push`) are allowed. Destructive Git/GitLab actions are forbidden without explicit confirmation: never `git push --delete`, never `--force`/`-f`, never delete branches/tags/remotes, never `glab mr close`/`delete`, never destructive `glab repo` commands.
 
 ## Architecture principles
 - Keep MODEL (reasoning/generation) and HARNESS (context, tools, workflow, memory, skills, orchestration, verification) separate.
@@ -49,4 +50,5 @@ Always write in English: code, comments, commit messages, memory (.ai/), and res
 
 ## Available resources
 Skills (load when applicable): engineering-memory, planning, spec-driven-development, code-review, debugging, incident-response, handoff.
-Quick prompts (user can type): /understand /plan /spec /implement /verify /review /retro /handoff.
+Quick prompts (user can type): /understand /plan /spec /implement /verify /review /retro /handoff /curate /memory-lint.
+Note: the `handoff` extension auto-writes a fallback handoff at session end (if none is open) and injects an open handoff at session start.

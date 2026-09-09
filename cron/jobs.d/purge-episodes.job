@@ -1,0 +1,7 @@
+---
+name: purge-episodes
+schedule: 0 6 * * *
+type: script
+command: /usr/bin/python3 /Users/ritadecassiafontenele/.pi/agent/scripts/purge_episodes.py
+deliver: local
+---

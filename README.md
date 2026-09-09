@@ -2,12 +2,42 @@
 
 Personal configuration for [Pi](https://pi.dev/) — a minimal coding agent harness. This repo makes the harness reproducible across machines.
 
+## Structure
+
+```mermaid
+flowchart LR
+    subgraph GLOBAL["Global — ~/.pi/agent/"]
+        AGENTS["AGENTS.md"]
+        MEM["memory/ + episodes/"]
+        EXT["extensions/"]
+        SKILLS["skills/"]
+        PROMPTS["prompts/"]
+    end
+    subgraph PROJECT["Per-project — repo/"]
+        PAGENTS["AGENTS.md"]
+        AI[".ai/"]
+    end
+    MODEL["Model"]
+    AGENTS --> MODEL
+    PAGENTS --> MODEL
+    EXT -->|"inject memory + handoff"| MODEL
+    AI -.->|"read on demand"| MODEL
+```
+
 ## Contents
 
 - `AGENTS.md` — global instructions: identity, operating loop, safety rules, memory pointers.
-- `settings.json` — default provider/model (DeepSeek `deepseek-v4-pro`, thinking `high`).
-- `skills/` — capability packages: engineering-memory, planning, code-review, debugging, incident-response, handoff.
-- `prompts/` — quick prompt templates: /understand /plan /implement /verify /review /retro /handoff.
+- `settings.json` — default provider/model (DeepSeek `deepseek-v4-flash`, thinking `high`).
+- `skills/` — capability packages: memory, engineering-memory, planning, spec-driven-development, code-review, code-review-ruleset, debugging, incident-response, handoff, herdr, episodic-memory, docker-compose-up, research-project.
+- `prompts/` — quick prompt templates: /understand /plan /spec /implement /verify /review /retro /handoff /memory /memory-lint /curate /episode /docker-up.
+- `extensions/` — TypeScript extensions: memory, episodic-memory, handoff.
+- `doc/` — how the harness works (start with `doc/README.md`).
+- `scripts/` + `cron/` — episodic-memory purge (daily).
+
+## Documentation
+
+See `doc/` for the internal documentation. Start with `doc/README.md` (index) and
+`doc/memory-overview.md` (the memory model).
 
 ## Install on a new machine
 
